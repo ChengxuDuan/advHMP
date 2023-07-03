@@ -7,6 +7,16 @@ Chengxu Duan, Zhicheng Zhang, Xiaoli Liu, Yonghao Dang, Jianqin Yin
 
 This code includes the adversarial attack method against convolutional models for human motion prediction and use the pytorch version of [TrajectoryCNN](https://github.com/lily2lab/TrajectoryCNN.git) as an example.
 
+First things first, clone this repo and create required paths.
+
+```bash
+git clone https://github.com/ChengxuDuan/advHMP.git
+cd advHMP
+mkdir data
+mkdir save_model
+mkdir seq
+```
+
 ## Requirements
 
 * python 3.7
@@ -28,7 +38,7 @@ This code utilizes the data as the same as [_Learning Trajectory Dependencies fo
 
 Then you need to move the data into `./data` like:
 ```
--dataset
+-data
  |-3DPW
    |-sequenceFiles
      |-test
@@ -97,6 +107,9 @@ python draw_poses.py --dataset H36M --activity walking
 ```
 Then you can draw the images of the clean and perturbed motion.  Because 3DPW data we use are not divided in to different activities, drawing poses of 3DPW doesn't need `--activity` command.
 
+The GIF may look like the examples below(solid lines are the input and predicted poses, while dotted lines are the ground truth):
+![clean_example](https://github.com/ChengxuDuan/advHMP/blob/master/clean_example.gif)
+![pert_example](https://github.com/ChengxuDuan/advHMP/blob/master/pert_example.gif)
 ## Citing
 
 If you use our code, please cite our work.
